@@ -1,0 +1,148 @@
+:root {
+    --header-color: rgb(255, 255, 255);
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Para hacer que el contenido ocupe todo lo que pueda ocupar */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Enfoque flex, para que el contenedor ocupe todo el espacio disponible */
+#main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* flex: flex-grow flex-shrink flex-basis */
+#header {
+    flex: 0 1 auto;
+
+    text-align: center;
+    padding: 10px;
+    background-color: var(--header-color);
+    box-shadow: 3px 7px 130px -27px rgba(0, 0, 0, 0.05) inset;
+
+    display: flex;
+    align-items: center;
+}
+
+#header h1 {
+    flex: 1 1 auto;
+}
+
+#color-generater-container {
+    flex: 1 1 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#color-label {
+    font-size: 40px;
+    color: white;
+    padding: 10px 20px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+#generate-button {
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    transition: all 0.1s ease;
+}
+
+#generate-button:hover {
+    background-color: rgb(210, 210, 210);
+    cursor: pointer;
+}
+
+#generate-button:active {
+    margin: 30px 0 0 0;
+}
+
+/* Gear Button */
+
+#gear-button {
+    padding: 10px;
+    border-radius: 100%;
+
+    /* top: 0 es necesario para que se vea la animacion */
+    position: relative;
+    top: 0;
+
+    transition: all 0.3s ease;
+}
+
+#gear-button:hover {
+    background-color: rgb(217, 217, 217);
+    top: 1px;
+    cursor: pointer;
+}
+
+/* Option Panel */
+#option-panel {
+    margin-right: auto;
+
+    /* padding: 9px 15px; */
+    border-radius: 10px;
+
+    position: absolute;
+    top: 9px;
+    left: 50px;
+
+    /* background-color: rgb(227, 227, 227); */
+
+    display: flex;
+
+    transition: all 0.3s ease;
+}
+
+.hide-panel {
+    top: -100px !important;
+}
+
+#option-panel option {
+    padding: 9px 10px;
+    background-color: rgb(226, 226, 226);
+
+    position: relative;
+    top: 0;
+    transition: all 0.3s ease;
+}
+
+#option-panel #hex {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#option-panel #hsl {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#option-panel option:hover {
+    background-color: rgb(201, 201, 201);
+    top: 1px;
+    cursor: pointer;
+}
+
+.option-selected {
+    background-color: rgb(201, 201, 201) !important;
+}
