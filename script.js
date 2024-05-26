@@ -5,10 +5,13 @@ function generateRandomColor(colorType) {
 
     let colorString = `rgb(${red}, ${green}, ${blue})`;
 
-    if (colorType == "rgb") {
-        return colorString
-    } else if (colorType == "hex") {
-        colorString = `#${red.toString(16).toUpperCase()}${green.toString(16).toUpperCase()}${blue.toString(16).toUpperCase()}`;
+    if (colorType === "rgb") {
+        return colorString;
+    } else if (colorType === "hex") {
+        let redHex = red.toString(16).toUpperCase().padStart(2, '0');
+        let greenHex = green.toString(16).toUpperCase().padStart(2, '0');
+        let blueHex = blue.toString(16).toUpperCase().padStart(2, '0');
+        colorString = `#${redHex}${greenHex}${blueHex}`;
         return colorString;
     }
 }
@@ -21,11 +24,11 @@ function updateOptions(option, arrOptions) {
 }
 
 function main() {
-    let mainContainer = document.getElementById("color-generater-container");
-    let generatorButton = document.getElementById("generate-button");
-    let colorLabel = document.getElementById("color-label");
-    let optionPanel = document.getElementById("option-panel");
-    let gearButton = document.getElementById("gear-button");
+    let mainContainer = document.querySelector(".color-generator-container");;
+    let generatorButton = document.querySelector(".generate-button");
+    let colorLabel = document.querySelector(".color-label");
+    let optionPanel = document.querySelector(".option-panel");
+    let gearButton = document.querySelector(".gear-button");
 
     let colorOptions = document.getElementsByClassName("op");
     let optionSelected = colorOptions[1];

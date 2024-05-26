@@ -3,7 +3,7 @@
 }
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
     border: 0;
@@ -17,14 +17,14 @@ body {
 }
 
 /* Enfoque flex, para que el contenedor ocupe todo el espacio disponible */
-#main-container {
+.main-container {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
 /* flex: flex-grow flex-shrink flex-basis */
-#header {
+.header {
     flex: 0 1 auto;
 
     text-align: center;
@@ -36,11 +36,11 @@ body {
     align-items: center;
 }
 
-#header h1 {
+.header h1 {
     flex: 1 1 auto;
 }
 
-#color-generater-container {
+.color-generator-container {
     flex: 1 1 auto;
 
     display: flex;
@@ -49,7 +49,7 @@ body {
     flex-direction: column;
 }
 
-#color-label {
+.color-label {
     font-size: 40px;
     color: white;
     padding: 10px 20px;
@@ -57,7 +57,7 @@ body {
     border-radius: 10px;
 }
 
-#generate-button {
+.generate-button {
     padding: 10px;
     border-radius: 10px;
     background: white;
@@ -68,18 +68,18 @@ body {
     transition: all 0.1s ease;
 }
 
-#generate-button:hover {
+.generate-button:hover {
     background-color: rgb(210, 210, 210);
     cursor: pointer;
 }
 
-#generate-button:active {
+.generate-button:active {
     margin: 30px 0 0 0;
 }
 
 /* Gear Button */
 
-#gear-button {
+.gear-button {
     padding: 10px;
     border-radius: 100%;
 
@@ -90,14 +90,14 @@ body {
     transition: all 0.3s ease;
 }
 
-#gear-button:hover {
+.gear-button:hover {
     background-color: rgb(217, 217, 217);
     top: 1px;
     cursor: pointer;
 }
 
 /* Option Panel */
-#option-panel {
+.option-panel {
     margin-right: auto;
 
     /* padding: 9px 15px; */
@@ -118,7 +118,7 @@ body {
     top: -100px !important;
 }
 
-#option-panel option {
+.option-panel option {
     padding: 9px 10px;
     background-color: rgb(226, 226, 226);
 
@@ -127,17 +127,18 @@ body {
     transition: all 0.3s ease;
 }
 
-#option-panel #hex {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-#option-panel #hsl {
+.option-panel #rgb {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-#option-panel option:hover {
+.option-panel #hex {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+.option-panel option:hover {
     background-color: rgb(201, 201, 201);
     top: 1px;
     cursor: pointer;
